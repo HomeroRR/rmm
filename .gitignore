@@ -1,0 +1,20 @@
+/img_features
+/MatterSim
+/models
+/results
+/snap
+/tasks/CVDN/data/*json*
+/tasks/NDH/data/*json*
+/tasks/NDH/results
+/tasks/NDH/snapshots
+/tasks/R2R/data/*json*
+/teaser
+/web
+/webgl_imgs
+*.Rhistory
+*.pyc
+
+# Except these files
+!*/
+!results/baseline/CVDN_train_eval_CVDN/G1/v1/steps_4/agent/sample/best_val_unseen
+!results/baseline/CVDN_train_eval_CVDN/G1/v1/steps_4/speaker/argmax/best_val_unseen
