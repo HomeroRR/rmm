@@ -53,7 +53,7 @@ def load_nav_graphs(scans):
     return graphs
 
 
-def load_datasets(splits, datasets='NDH', mount_dir='', segmented=False, speaker_only=False):
+def load_datasets(splits, datasets='CVDN', mount_dir='', segmented=False, speaker_only=False):
     data = []
     for split in splits:
         assert split in ['train', 'val_seen', 'val_unseen', 'test']
@@ -564,13 +564,14 @@ def load(best_model, path, with_critic=False, parallel=True):
     def recover_state(name, model, optimizer):
         state = model.state_dict()
         state.update(states[name]['state_dict'])
-        # if parallel:
-        #     new_state = {}
-        #     for k, v in state.items():
-        #         key = k[7:] if k[:7] == 'module.' else k# remove `module.`
-        #         # print(key)
-        #         new_state[key] = v
-        #     state = new_state
+        ############  Comment out if `module` prefix is required #############
+        if parallel:
+            new_state = {}
+            for k, v in state.items():
+                key = k[7:] if k[:7] == 'module.' else k 
+                new_state[key] = v
+            state = new_state
+        #######################################################################
         model.load_state_dict(state)
         optimizer.load_state_dict(states[name]['optimizer'])
     all_tuple = [("encoder", best_model['encoder'], best_model['encoder_optm']),
