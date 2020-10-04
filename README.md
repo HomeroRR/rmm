@@ -3,10 +3,10 @@
 This repository contains code for the paper [**RMM: A Recursive Mental Model for Dialog Navigation**](https://arxiv.org/abs/2005.00728).
 
 ```bibtex
-@inproceedings{romanroman:arxiv20,
+@inproceedings{romanroman:EMNLP-Findings20,
   title={RMM: A Recursive Mental Model for Dialog Navigation},
   author={Homero Roman Roman and Yonatan Bisk and Jesse Thomason and Asli Celikyilmaz and Jianfeng Gao},
-  booktitle={arXiv},
+  booktitle={Findings of the 2020 Conference on Empirical Methods in Natural Language Processing},
   year={2020}
 }
 ```
